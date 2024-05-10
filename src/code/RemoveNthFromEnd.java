@@ -5,9 +5,6 @@ import static code.RemoveNthFromEnd.ListNode.of;
 public class RemoveNthFromEnd {
 
 	public static void main(String[] args) {
-
-
-
 		System.out.println(removeNthFromEnd2(new ListNode(1), 1));
 		System.out.println(removeNthFromEnd2(of(1, 2, 3), 3));
 		System.out.println(removeNthFromEnd2(of(1, 2, 3, 4), 1));
@@ -40,25 +37,6 @@ public class RemoveNthFromEnd {
 		}
 
 		return of(arr);
-
-	}
-
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
-		int size = getSize(head);
-		n = size - n + 1;
-
-		ListNode current = head;
-		ListNode previous = head;
-
-		while (n > 0) {
-			previous = current;
-			current = current.next;
-			n--;
-		}
-
-		previous.next = current.next;
-
-		return head;
 
 	}
 

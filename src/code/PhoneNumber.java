@@ -42,10 +42,10 @@ public class PhoneNumber {
 			lists.add(buttons.get(num));
 		}
 
-		return lists.stream().reduce(new ArrayList<>(), (word1, word2) -> merge(word1, word2 != null ? word2 : new ArrayList<>()));
+		return lists.stream().reduce(new ArrayList<>(), (word1, word2) -> cartesianProduct(word1, word2 != null ? word2 : new ArrayList<>()));
 	}
 
-	private static List<String> merge(List<String> word1, List<String> word2) {
+	private static List<String> cartesianProduct(List<String> word1, List<String> word2) {
 		if (word2.isEmpty()) {
 			return word1;
 		}

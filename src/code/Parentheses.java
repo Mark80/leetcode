@@ -21,7 +21,7 @@ public class Parentheses {
 	public List<String> generateParenthesis(int n) {
 		ArrayList<String> list = new ArrayList<>();
 		list.add("(");
-		return generateParenthesisLoop(n * 2, 1, 0, list).stream().distinct().collect(Collectors.toList());
+		return generateParenthesisLoop(n * 2, 1, 0, list);
 	}
 
 	public List<String> generateParenthesisLoop(int n, int aperte, int chiuse, List<String> list) {

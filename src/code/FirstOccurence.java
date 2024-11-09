@@ -24,11 +24,13 @@ public class FirstOccurence {
 		char[] charArray = haystack.toCharArray();
 
 		for (int i = 0; i < charArray.length; i++) {
+			//System.out.println(i);
 			if(i + needle.length() > charArray.length)
 				break;
 			int needleIndex = 0;
 
 			if (charArray[i] == needle.charAt(0)) {
+				//System.out.println("in if " + i);
 				boolean check = true;
 				while (check && needleIndex < needle.length()) {
 					check = charArray[i + needleIndex] == needle.charAt(needleIndex);
@@ -38,7 +40,10 @@ public class FirstOccurence {
 				}
 				if (check) {
 					return i;
+				} else {
+					i = i + 1;
 				}
+
 			}
 
 		}
